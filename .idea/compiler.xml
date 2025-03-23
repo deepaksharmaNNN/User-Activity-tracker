@@ -3,16 +3,26 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for analytics-service" enabled="true">
+      <profile name="Annotation profile for common-lib" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="common-lib" />
+      </profile>
+      <profile name="Annotation profile for eureka-server" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
-        <module name="analytics-service" />
         <module name="api-gateway" />
-        <module name="common-lib" />
+        <module name="analytics-service" />
+        <module name="eureka-server" />
         <module name="tracking-service" />
       </profile>
     </annotationProcessing>
@@ -22,6 +32,7 @@
       <module name="analytics-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="common-lib" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="tracking-service" options="-parameters" />
     </option>
   </component>

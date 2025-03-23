@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/Backend/analytics-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Backend/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Backend/common-lib/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Backend/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Backend/tracking-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
