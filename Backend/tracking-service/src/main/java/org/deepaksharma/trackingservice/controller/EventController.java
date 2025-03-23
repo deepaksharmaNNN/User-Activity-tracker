@@ -3,15 +3,17 @@ package org.deepaksharma.trackingservice.controller;
 import lombok.RequiredArgsConstructor;
 import org.deepaksharma.trackingservice.service.TrackingService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RestController("/api/v1/event")
+@RestController
+@RequestMapping("/api/v1/event")
 public class EventController {
     private final TrackingService trackingService;
 
-    @PostMapping("/click")
+    @PostMapping("/click") // http://localhost:8080/api/v1/event/click?productId=123
     public String trackClick(@RequestParam String productId) {
         trackingService.trackEvent("Click", productId);
         return "Click event tracked " + productId;
