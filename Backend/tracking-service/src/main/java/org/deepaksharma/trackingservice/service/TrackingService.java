@@ -10,14 +10,18 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class TrackingService {
-    private final TrackingEventRepository trackingEventRepository;
+//    private final TrackingEventRepository trackingEventRepository;
+    private final EventProducer eventProducer;
 
     public void trackEvent(String eventType, String productId) {
-        TrackingEvent trackingEvent = TrackingEvent.builder()
-                .eventType(eventType)
-                .productId(productId)
-                .timestamp(LocalDateTime.now())
-                .build();
-        trackingEventRepository.save(trackingEvent);
+        eventProducer.sendEvent(eventType, productId);
     }
+//    public void trackEvent(String eventType, String productId) {
+//        TrackingEvent trackingEvent = TrackingEvent.builder()
+//                .eventType(eventType)
+//                .productId(productId)
+//                .timestamp(LocalDateTime.now())
+//                .build();
+//        trackingEventRepository.save(trackingEvent);
+//    }
 }
