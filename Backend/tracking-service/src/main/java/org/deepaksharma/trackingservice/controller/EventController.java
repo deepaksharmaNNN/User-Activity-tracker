@@ -2,6 +2,7 @@ package org.deepaksharma.trackingservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.deepaksharma.trackingservice.service.TrackingService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class EventController {
     private final TrackingService trackingService;
 
-    @PostMapping("/click") // http://localhost:8080/api/v1/event/click?productId=123
-    public String trackClick(@RequestParam String productId) {
+    @PostMapping("/click") // http://localhost:8081/api/v1/event/click?productId=123
+    public ResponseEntity<?> trackClick(@RequestParam String productId) {
         trackingService.trackEvent("Click", productId);
-        return "Click event tracked " + productId;
+        return ResponseEntity.ok("Click event tracked " + productId);
     }
     @PostMapping("/add_to_cart")
     public String trackAddToCart(@RequestParam String productId) {
